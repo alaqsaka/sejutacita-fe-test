@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Book from "./Book";
-import { Grid, CircularProgress, TextField } from "@mui/material";
+import { Grid, CircularProgress, TextField, Pagination } from "@mui/material";
 
 const Books = (props) => {
   const booksData = props.booksData;
@@ -10,8 +10,7 @@ const Books = (props) => {
   return (
     <div>
       <TextField
-        fullWidth
-        label="Search"
+        label="Cari Judul Disini"
         id="fullWidth"
         onChange={(event) => {
           setsearch(event.target.value);

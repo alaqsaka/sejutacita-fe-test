@@ -12,9 +12,9 @@ export const getCategories = () => async (dispatch) => {
   }
 };
 
-export const getCategoriesById = (id) => async (dispatch) => {
+export const getCategoriesById = (id, page) => async (dispatch) => {
   try {
-    const { data } = await api.fetchCategoryById(id);
+    const { data } = await api.fetchCategoryById(id, page);
     console.log("actions: " + data);
 
     dispatch({ type: "FETCH_CATEGORY_BY_ID", payload: data });

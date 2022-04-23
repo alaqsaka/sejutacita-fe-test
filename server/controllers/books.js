@@ -20,7 +20,7 @@ export const getBooks = async (req, res) => {
 export const getBooksByCategoryId = async (req, res) => {
   const { id } = req.params;
   const response = await fetch(
-    `https://asia-southeast2-sejutacita-app.cloudfunctions.net/fee-assessment-books?categoryId=${id}&size=`,
+    `https://asia-southeast2-sejutacita-app.cloudfunctions.net/fee-assessment-books?categoryId=${id}&size=10`,
     {
       method: "GET",
       headers: {
