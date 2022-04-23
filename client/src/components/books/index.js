@@ -21,7 +21,7 @@ const Books = () => {
 
   return (
     <div>
-      <Typography variant="h4">Explore Categories</Typography>
+      <Typography variant="h5">Explore Categories</Typography>
 
       <Grid container spacing={2}>
         {books?.map((category) => (
@@ -35,13 +35,7 @@ const Books = () => {
         ))}
       </Grid>
 
-      {books?.map((category) => (
-        // dispatch category with size of 10
-        <Typography variant="h5" key={category.id}>
-          {category.name}
-          <BooksCategories id={category.id} />
-        </Typography>
-      ))}
+      <Typography variant="h5">Bookmarks</Typography>
     </div>
   );
 };
