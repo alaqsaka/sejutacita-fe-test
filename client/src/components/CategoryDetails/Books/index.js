@@ -6,7 +6,7 @@ const Books = (props) => {
   const booksData = props.booksData;
   const [search, setsearch] = useState("");
 
-  console.log("Books data from Books: ", booksData);
+  console.log("Books data from Books: ", booksData.books);
   return (
     <div>
       <TextField
@@ -17,10 +17,10 @@ const Books = (props) => {
         }}
       />
       <Grid container alignItems="stretch" spacing={3}>
-        {!booksData.length ? (
+        {!booksData.books ? (
           <CircularProgress />
         ) : (
-          booksData
+          booksData.books
             .filter((val) => {
               if (search == "") {
                 return val;

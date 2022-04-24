@@ -21,13 +21,25 @@ const CategoryDetails = () => {
     dispatch(getCategoriesById(id, page));
   }, [id, page]);
 
-  console.log("ini books: " + books);
+  console.log("books");
+  console.log(books);
+
+  let category = books.category;
+  //
+  if (category) {
+    category = category.filter((kategori) => kategori.id == id);
+  }
+
+  let currentCategory = category;
+  console.log(currentCategory);
 
   return (
     <Container maxWidth="lg">
-      <Typography variant="h5">Nama Category: </Typography>
+      <Typography variant="h5">
+        {!currentCategory ? <CircularProgress /> : `${currentCategory[0].name}`}
+      </Typography>
 
-      {!books.length ? <CircularProgress /> : <Books booksData={books} />}
+      {!books ? <CircularProgress /> : <Books booksData={books} />}
       {/* <Pagination count={10} size="large" to={`/category/${id}?page=${page}`} /> */}
       <Pagination
         count={10}
