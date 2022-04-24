@@ -6,6 +6,7 @@ import {
   CardContent,
   Typography,
   Button,
+  Divider,
 } from "@mui/material";
 import useStyles from "./styles";
 
@@ -13,7 +14,7 @@ const Book = (props) => {
   const classes = useStyles();
 
   return (
-    <Card sx={{ maxWidth: 345 }} className={classes.card}>
+    <Card sx={{ width: "100%" }} className={classes.card}>
       <CardMedia
         component="img"
         src={props.bookDetails.cover_url}
@@ -22,16 +23,29 @@ const Book = (props) => {
         className={classes.media}
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h6" className={classes.bold}>
           {props.bookDetails.title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          className={classes.author}
+        >
           {props.bookDetails.authors?.map((author) => author)}
         </Typography>
-        <Typography variant="h6" color="text.secondary">
+        <Divider className={classes.divider} />
+        <Typography
+          variant="h6"
+          color="text.secondary"
+          className={classes.bold}
+        >
           What's it about?
         </Typography>
-        <Typography variant="caption" color="text.secondary">
+        <Typography
+          variant="caption"
+          color="text.secondary"
+          className={classes.desc}
+        >
           {props.bookDetails.description}
         </Typography>
       </CardContent>

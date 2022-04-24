@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Book from "./Book";
+import useStyles from "./styles";
 import { Grid, CircularProgress, TextField, Pagination } from "@mui/material";
 
 const Books = (props) => {
   const booksData = props.booksData;
+  const classes = useStyles();
   const [search, setsearch] = useState("");
 
   console.log("Books data from Books: ", booksData.books);
@@ -15,6 +17,7 @@ const Books = (props) => {
         onChange={(event) => {
           setsearch(event.target.value);
         }}
+        className={classes.search}
       />
       <Grid container alignItems="stretch" spacing={3}>
         {!booksData.books ? (

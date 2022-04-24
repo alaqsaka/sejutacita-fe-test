@@ -15,13 +15,11 @@ const Books = () => {
 
   console.log(books);
 
-  const categoryPage = () => {
-    console.log("pressed");
-  };
-
   return (
     <div>
-      <Typography variant="h5">Explore Categories</Typography>
+      <Typography variant="h5" className={classes.title}>
+        Explore Categories
+      </Typography>
 
       <Grid container spacing={2}>
         {books?.map((category) => (
@@ -35,7 +33,9 @@ const Books = () => {
         ))}
       </Grid>
 
-      <Typography variant="h5">Bookmarks</Typography>
+      <Typography variant="h5" className={classes.title}>
+        Bookmarks
+      </Typography>
     </div>
   );
 };

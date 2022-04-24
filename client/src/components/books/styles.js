@@ -6,4 +6,9 @@ export default makeStyles((theme) => ({
     display: "flex",
     flexDirection: "row",
   },
+  title: {
+    fontWeight: "600 !important",
+    marginTop: "20px !important",
+    marginBottom: "20px !important",
+  },
 }));
