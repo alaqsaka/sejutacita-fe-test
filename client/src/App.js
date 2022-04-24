@@ -2,6 +2,7 @@ import Home from "./components/Home";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import CategoryDetails from "./components/CategoryDetails";
 import { ThemeProvider, createTheme } from "@mui/material";
+import Navbar from "./components/Navbar";
 
 function App() {
   const theme = createTheme({
@@ -20,6 +21,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App">
         <header className="App-header">
+          <Navbar />
           <BrowserRouter>
             <Routes>
               <Route path="/" exact element={<Home />} />

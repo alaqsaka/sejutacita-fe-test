@@ -12,7 +12,7 @@ const Home = () => {
   });
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="xl">
       <Books />
     </Container>
   );
