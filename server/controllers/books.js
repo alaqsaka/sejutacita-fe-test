@@ -35,7 +35,7 @@ export const getBooksByCategoryId = async (req, res) => {
   let category = await categories;
   console.log(category);
   const response = await fetch(
-    `https://asia-southeast2-sejutacita-app.cloudfunctions.net/fee-assessment-books?categoryId=${id}&size=10`,
+    `https://asia-southeast2-sejutacita-app.cloudfunctions.net/fee-assessment-books?categoryId=${id}`,
     {
       method: "GET",
       headers: {
@@ -46,9 +46,13 @@ export const getBooksByCategoryId = async (req, res) => {
   );
 
   let listOfBooks = await response.json();
+  console.log(listOfBooks.length);
+
   const data = {
     category: category,
     books: listOfBooks,
+    total: listOfBooks.length,
+    numberOfPages: Math.ceil(listOfBooks.length / 10),
   };
 
   res.status(200).json(data);

@@ -7,4 +7,4 @@ const API = axios.create({
 
 export const fetchCategory = () => API.get(`/`);
 export const fetchCategoryById = (id, page) =>
-  API.get(`/category/${id}&size=10&page=${page}`);
+  API.get(`/category/${id}&page=${page}`);

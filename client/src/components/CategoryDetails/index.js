@@ -32,27 +32,38 @@ const CategoryDetails = () => {
 
   let currentCategory = category;
   console.log(currentCategory);
+  let numOfPages = books.numberOfPages;
 
+  console.log("number page");
+  if (numOfPages) {
+    console.log(numOfPages);
+  }
   return (
     <Container maxWidth="lg">
       <Typography variant="h5">
         {!currentCategory ? <CircularProgress /> : `${currentCategory[0].name}`}
       </Typography>
 
-      {!books ? <CircularProgress /> : <Books booksData={books} />}
-      {/* <Pagination count={10} size="large" to={`/category/${id}?page=${page}`} /> */}
-      <Pagination
-        count={10}
-        page={Number(page) || 1}
-        variant="outlined"
-        renderItem={(item) => (
-          <PaginationItem
-            {...item}
-            component={Link}
-            to={`/category/${id}?page=${item.page}&size=10`}
+      {!books ? (
+        <CircularProgress />
+      ) : (
+        <div>
+          <Books booksData={books} />
+          <Pagination
+            count={10}
+            page={Number(page) || 1}
+            variant="outlined"
+            renderItem={(item) => (
+              <PaginationItem
+                {...item}
+                component={Link}
+                to={`/category/${id}?page=${item.page}&size=10`}
+              />
+            )}
           />
-        )}
-      />
+        </div>
+      )}
+      {/* <Pagination count={10} size="large" to={`/category/${id}?page=${page}`} /> */}
     </Container>
   );
 };
