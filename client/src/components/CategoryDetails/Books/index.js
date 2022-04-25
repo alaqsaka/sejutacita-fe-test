@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Book from "./Book";
 import useStyles from "./styles";
-import { Grid, CircularProgress, TextField } from "@mui/material";
+import {
+  Grid,
+  CircularProgress,
+  TextField,
+  InputAdornment,
+} from "@mui/material";
+import search_icon from "../../../assets/icons/search_icon.svg";
 
 const Books = (props) => {
   const booksData = props.booksData;
@@ -28,12 +34,25 @@ const Books = (props) => {
   return (
     <div>
       <TextField
-        label="Cari Judul Disini"
+        label="Search this category"
         id="fullWidth"
         onChange={(event) => {
           setsearch(event.target.value);
         }}
         className={classes.search}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <img
+                src={search_icon}
+                alt=""
+                srcset=""
+                width={16}
+                style={{ color: "rgba(0, 0, 0, 0.87);" }}
+              />
+            </InputAdornment>
+          ),
+        }}
       />
       <Grid container alignItems="stretch" spacing={3}>
         {!booksData.books ? (
