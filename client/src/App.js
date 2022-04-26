@@ -4,6 +4,7 @@ import CategoryDetails from "./components/CategoryDetails";
 import { ThemeProvider, createTheme } from "@mui/material";
 import Navbar from "./components/Navbar";
 import { CssBaseline } from "@mui/material";
+import Footer from "./components/Footer";
 
 function App() {
   const theme = createTheme({
@@ -30,6 +31,7 @@ function App() {
             </Routes>
           </BrowserRouter>
         </header>
+        <Footer />
       </div>
     </ThemeProvider>
   );
