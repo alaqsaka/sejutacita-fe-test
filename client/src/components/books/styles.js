@@ -11,4 +11,9 @@ export default makeStyles((theme) => ({
     marginTop: "20px !important",
     marginBottom: "20px !important",
   },
+  chip: {
+    backgroundColor: "#2b46a6 !important",
+    color: "#fff !important",
+    fontSize: "16px !important",
+  },
 }));

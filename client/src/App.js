@@ -3,13 +3,13 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import CategoryDetails from "./components/CategoryDetails";
 import { ThemeProvider, createTheme } from "@mui/material";
 import Navbar from "./components/Navbar";
+import { CssBaseline } from "@mui/material";
 
 function App() {
   const theme = createTheme({
     palette: {
-      type: "dark",
       background: {
-        default: "#1E1F21",
+        default: "#f5f5f5",
       },
     },
     typography: {
@@ -19,6 +19,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <div className="App">
         <header className="App-header">
           <Navbar />

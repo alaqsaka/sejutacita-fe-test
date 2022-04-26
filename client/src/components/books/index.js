@@ -28,6 +28,7 @@ const Books = () => {
               label={category.name}
               onClick={() => navigate(`/category/${category.id}`)}
               variant="outlined"
+              className={classes.chip}
             />
           </Grid>
         ))}

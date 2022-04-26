@@ -13,6 +13,8 @@ export default makeStyles({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
+    borderRadius: "16px !important",
+    boxShadow: "8px 16px 24px 4px rgb(0 0 0 / 5%) !important",
   },
   bold: {
     fontWeight: "600 !important",

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import Book from "../CategoryDetails/Books/Book";
+import NoBookmarkImg from "../../assets/images/Bibliophile-bro.svg";
 
 const Bookmark = () => {
   const bookmarkInitialValue = [];
@@ -36,7 +37,28 @@ const Bookmark = () => {
   return (
     <div>
       {!bookmark.length ? (
-        "No Bookmark added"
+        <div style={{ textAlign: "center" }}>
+          <img
+            src={NoBookmarkImg}
+            alt="Imagination illustrations by Storyset"
+            srcset="Imagination illustrations by Storyset"
+            width={300}
+          />
+          <Typography
+            variant="h4"
+            style={{ fontWeight: "700", color: "#2B46A6" }}
+          >
+            Save books for later
+          </Typography>
+          <Typography
+            variant="body1"
+            style={{ fontWeight: "500" }}
+            color="text.secondary"
+          >
+            Don’t let the favorite ones fly away! Bookmark Books to easily find
+            them again in the future.
+          </Typography>
+        </div>
       ) : (
         <Grid container alignItems="stretch" spacing={3}>
           {bookmark?.map((book) => renderBookInfo(book))}
